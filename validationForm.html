@@ -1,0 +1,182 @@
+
+<html>
+<head>
+<title>
+Registration form
+</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script>
+function myfunc()
+{
+var username=document.forms["abc"]["username"].value;
+var re=/^[a-zA-Z]{2,10}$/;
+if(!re.test(username))
+{
+alert("invalid name...name must be between 2 to 10 characters");
+document.forms["abc"]["username"].focus();
+return false;
+}
+
+
+var email=document.forms["abc"]["email"].value;
+var re1=/^([a-zA-Z0-9]{2,10})@([a-zA-Z]+)\.([a-zA-Z]{3})$/;
+if(!re1.test(email))
+{
+alert("invalid email");
+document.forms["abc"]["email"].focus();
+return false; 
+}
+var mobile=document.forms["abc"]["mobile"].value;
+var re2=/^([6-9]{1})([0-9]{9})$/;
+if(!re2.test(mobile))
+{
+alert("invalid Mobile number,should have 10 digit and starting no. be 6-9");
+document.forms["abc"]["mobile"].focus();
+return false;
+}
+var password=document.forms["abc"]["password"].value;
+var re3=/^([A-Z]{1})([a-zA-Z0-9]{2,10})([_\@\$]{1})([0-9]{1,5})$/
+if(!re3.test(password))
+{
+alert("password start with capital letter(A-Z)and have(_$@)and number");
+document.forms["abc"]["password"].focus();
+return false;
+}
+var confirm_password=document.forms["abc"]["confirm_password"].value;
+s
+ if(confirm_password.localeCompare(password)!=0)
+{
+alert("confirm password should be same as password");
+document.forms["abc"]["confirm_password"].focus();
+return false;
+}
+var country=document.forms["abc"]["country"].value;
+var l2=country.length;
+if(l2==0)
+{
+alert("please select any country");
+document.forms["abc"]["country"].focus();
+return false;
+}
+var categ=document.forms["abc"]["categ"].value;
+var l4=categ.length;
+if(l4==0)
+{
+alert("please select any category");
+document.forms["abc"]["categ"].focus();
+return false;
+}
+var gender=document.forms["abc"]["gender"].value;
+var l3=gender.length;
+if(l3==0)
+{
+alert("please select any gender");
+document.forms["abc"]["gender"].focus();
+return false;
+}
+var city=document.forms["abc"]["city"].value;
+var l5=city.length;
+if(l5==0)
+{
+alert("please select any city");
+document.forms["abc"]["city"].focus();
+return false;
+}
+var description=document.forms["abc"]["description"].value;
+var l1=description.length;
+if(l1==0)
+{
+alert("description can't be empty");
+document.forms["abc"]["description"].focus();
+return false;
+}
+
+document.writeln("<b>Name:</b> "+document.abc.username.value+"<br/>"+
+"<b>Email:</b> "+document.abc.email.value+"<br/>"+
+"<b>Mobile no:</b> "+document.abc.mobile.value+"<br/>"+
+"<b>Country:</b> "+document.abc.country.value+"<br/>"+
+"<b>Category:</b> "+document.abc.categ.value+"<br/>"+
+"<b>Gender:</b> "+document.abc.gender.value+"<br/>"+
+"<b>City:</b> "+document.abc.city.value+"<br/>"+
+"<b>Description:</b> "+document.abc.description.value); 
+
+
+
+} 
+</script>
+
+</head>
+<body style="background:url(body-bg.jpg);">
+<div class="container">
+<form   name="abc"  method="post">
+<legend><h1 align="center"><font color="blue">Registration Form</font></h1></legend>
+ 
+<table align="center" style="background-color:#fff" border="3" border-style="solid" border-width="5px" border-collapse="collapse" cellpadding="10" cellspacing="6">
+<tr><td><b>Username </b></td><td ><input type="text" name="username" placeholder="username" class="form-control">
+</td></tr><tr></tr>
+<tr><td><b>Email</b> </td><td> <input type="text"    name="email" placeholder="email" class="form-control" ></td></tr>
+<tr><td><b>Mobile</b> </td><td> <input type="number" name="mobile" placeholder="mobile no." class="form-control"></td></tr>
+<td><b>Password</b> </td><td> <input type="password" name="password" placeholder="password"class="form-control"></td>
+<tr><td><b>Confirm password</b></td><td><input type="password" name="confirm_password" placeholder="confirm password" class="form-control"></td></tr>
+<tr>
+<td ><b>DOB</b>
+</td>
+<td><input type="Date"class="form-control"></td>
+</tr>
+
+<tr><td ><b>Upload file</b></td><td><input type="file" name="fileupload" accept="image/*" class="form-control"></td>
+</tr>
+<tr><td><b>Country</b></td>
+<td>
+<select name="country">
+<option value="">--Select--</option>
+<option value="India">India</option>
+<option value="Australia">Australia</option> 
+<option value="Italy">Italy</option>
+<option value="Spain">Spain</option>
+<option value="Switzerland">Switzerland</option>
+<option value="US">USA</option>
+<option value="Canada">Cananda</option>
+<option value="UK">United Kingdom</option>
+<option value="Hongkong">Hongkong</option>
+</select>
+</td></tr>
+<tr><td><b>Category</b></td><td>
+<input type= "radio" name="categ" value="General">General
+<input type= "radio" name="categ" value="OBC">OBC
+<input type= "radio" name="categ" value="SC">SC
+<input type= "radio" name="categ" value="ST">ST</td></tr>
+
+<tr><td><b>Gender</b></td>
+<td>
+<input type="radio" name="gender" value="Male">Male
+<input type="radio" name="gender" value="Female">Female
+<input type="radio" name="gender" value="Others">Others</td></tr> 
+<tr>
+<td><b>City</b></td><td> 
+<select name="city">
+<option value="">--Select--</option>
+<option value="Lucknow">LUCKNOW</option>
+<option value="Surat">SURAT</option>
+<option value="Patiala">PATIALA</option>
+<option value="Mumbai">MUMBAI</option>
+<option value="Chennai">CHENNAI</option>
+<option value="Kanpur">KANPUR</option>
+<option value="Delhi">DELHI</option>
+</select>         </td></tr>
+
+
+<tr><td><b>Description</b></td>
+<td><textarea rows="5" cols="40" name="description" placeholder="Enter description here..."></textarea></td></tr>
+<br>
+
+ 
+<tr><td> <input type ="button" value="submit"  class="btn btn-success" onclick="myfunc()"></td>
+<td> <input type ="reset" value="Reset"  class="btn btn-primary"></td></tr>
+</table>
+
+</form>
+
+</div>
+</body>
+</html>
